@@ -1,0 +1,255 @@
+﻿<UserControl x:Class="StrasInfo.View.Phone.TransportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+             DataContext="{Binding TransportModel, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <Storyboard x:ConnectionId='1' x:Name="HideListViewLigne">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                           Storyboard.TargetName="listView">
+                <EasingDoubleKeyFrame KeyTime="0"
+                                      Value="0" />
+                <EasingDoubleKeyFrame x:ConnectionId='8' KeyTime="0:0:0.1"
+                                      Value="-402"
+                                      x:Name="HideListKeyFrame">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:ConnectionId='2' x:Name="ShowListViewLigne">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                           Storyboard.TargetName="listView">
+                <EasingDoubleKeyFrame x:ConnectionId='7' KeyTime="0"
+                                      Value="-402"
+                                      x:Name="ShowListKeyFrame" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                                      Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:ConnectionId='3' x:Name="HideListViewArret">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                           Storyboard.TargetName="gridListArret">
+                <EasingDoubleKeyFrame KeyTime="0"
+                                      Value="0" />
+                <EasingDoubleKeyFrame x:ConnectionId='6' KeyTime="0:0:0.1"
+                                      Value="-402"
+                                      x:Name="HideListKeyFrameListArret">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:ConnectionId='4' x:Name="ShowListViewArret">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                           Storyboard.TargetName="gridListArret">
+                <EasingDoubleKeyFrame x:ConnectionId='5' KeyTime="0"
+                                      Value="-402"
+                                      x:Name="ShowListKeyFrameListArret" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                                      Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+    </UserControl.Resources>
+
+    <Grid Background="GhostWhite">
+        <Grid Visibility="{Binding ShowArretDetail, Converter={StaticResource TrueToVisibleConverter}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock 
+                            DataContext="{Binding SelectedArret}"
+                            Text="{Binding Name}" 
+                            FontFamily="{StaticResource StrasInfoFont}"
+                            VerticalAlignment="Center"
+                            FontSize="45" 
+                            TextWrapping="Wrap"
+                            Margin="10 0 0 0"
+                            Foreground="{StaticResource ApplicationMainColorDark}"/>
+
+                        <Button Background="Transparent"
+                                Command="{Binding ToogleFavorite}"
+                                Visibility="{Binding IsFavorite, Converter={StaticResource FalseToVisibleConverter}}"
+                                Template="{StaticResource BouttonFavoriteControlTemplate}"
+                                Grid.Column="1">
+                            <ContentControl Style="{StaticResource HeartNonFavorite}"  />
+                        </Button>
+
+                        <Button Background="Transparent"
+                                Command="{Binding ToogleFavorite}"
+                                Visibility="{Binding IsFavorite, Converter={StaticResource TrueToVisibleConverter}}"
+                                Template="{StaticResource BouttonFavoriteControlTemplate}"
+                                Grid.Column="1">
+                            <ContentControl Style="{StaticResource HeartFavorite}"  />
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1">
+                    <maps:MapControl x:ConnectionId='15' x:Name="StrasMapControl"
+                         MapServiceToken="1uXQY1wo39PWxZO66Xww~Gcr2KW6qG4caAtJMr4tH3A~Aq9FrcCWUZOkdaixiXx8S0q5e2epchPRvwTDTXcj0_YnaDZK4iFgpe0sKp3lhnCP"
+                         TrafficFlowVisible="True"/>
+                </Grid>
+
+                <Grid Grid.Row="2" DataContext="{Binding SelectedArret}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="{StaticResource ApplicationMenuHeaderColor}" BorderThickness="0 1 0 1">
+                        <Grid x:ConnectionId='14' x:Name="ListViewHeaders" Background="LightGray" Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="18"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Style>
+                            </Grid.Resources>
+
+                            <TextBlock Grid.Column="0" Text="Destination"/>
+                            <TextBlock Grid.Column="1" Text="Horaire"/>
+                        </Grid>
+                    </Border>
+
+
+                    <Grid Grid.Row="1" DataContext="{Binding NextArrivee}" Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="22"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Style>
+                        </Grid.Resources>
+
+                        <Grid Width="40"
+                                          Height="40"
+                                          Margin="0 0 20 0">
+                            <Ellipse Fill="{Binding Color, Converter={StaticResource StringToBrushConverter}}" />
+                            <TextBlock Text="{Binding Number}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
+                                                   FontSize="15"
+                                                    Foreground="{Binding Color, Converter={StaticResource StringColorToBlackOrWhiteBrush}}" />
+                        </Grid>
+                        <TextBlock Grid.Column="1" Text="{Binding Destination}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Horaire}"/>
+                    </Grid>
+
+                    <ListView x:ConnectionId='13' 
+                        x:Name="ArriveeListView" 
+                        Grid.Row="2" 
+                        ItemsSource="{Binding Arrivees}" 
+                        Margin="10">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem" BasedOn="{StaticResource ListViewItemHomeStyle}">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Width="35"
+                                          Height="35"
+                                          Margin="0 0 20 0">
+                                        <Ellipse Fill="{Binding Color, Converter={StaticResource StringToBrushConverter}}" />
+                                        <TextBlock Text="{Binding Number}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
+                                                   FontSize="14"
+                                                    Foreground="{Binding Color, Converter={StaticResource StringColorToBlackOrWhiteBrush}}" />
+                                    </Grid>
+                                    <TextBlock Grid.Column="1" Text="{Binding Destination}" Foreground="Black"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Horaire}" Foreground="Black"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid x:ConnectionId='9' 
+            x:Name="gridListArret"
+            Visibility="{Binding ShowArretList, Converter={StaticResource TrueToVisibleConverter}}">
+            <Grid DataContext="{Binding SelectedLigne}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ContentControl ContentTemplate="{StaticResource TransportLigneTemplate}"
+                                Grid.Row="0" />
+                <ListView x:ConnectionId='12' Grid.Row="1"
+                          x:Name="ArretListView"
+                          ScrollViewer.VerticalScrollMode="Auto"
+                                                             
+                          ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                          ItemsSource="{Binding Arrets}"
+                          IsItemClickEnabled="True"
+                          ItemTemplate="{StaticResource TransportArretTemplate}" />
+            </Grid>
+
+            <Grid.RenderTransform>
+                <CompositeTransform />
+            </Grid.RenderTransform>
+        </Grid>
+        <Border x:ConnectionId='10' x:Name="listView"
+                BorderBrush="Black"
+                BorderThickness="0 0 1 0"
+                RenderTransformOrigin="0.5,0.5"
+                Visibility="{Binding ShowLigneList, Converter={StaticResource TrueToVisibleConverter}}">
+            <ListView x:ConnectionId='11' ItemsSource="{Binding Lignes}"
+                      x:Name="LigneListView"
+                      ItemTemplate="{StaticResource TransportLigneTemplate}"
+                      ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                      IsItemClickEnabled="True"
+                                                          />
+            <Border.RenderTransform>
+                <CompositeTransform />
+            </Border.RenderTransform>
+        </Border>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,2 @@
+MainPackage=D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x86\Release\Upload\StrasInfo_2.0.1.0_x86.appx
+SymbolPackage=D:\Projets\StrasInfo\StrasInfo\StrasInfo\AppPackages\StrasInfo_2.0.1.0\StrasInfo_2.0.1.0_x86.appxsym

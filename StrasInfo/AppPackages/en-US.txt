@@ -1,0 +1,1 @@
+StrasInfo allow you to visualize the Strasbourg trafic informations in real time and track work of the city. In addition to that, you can see car park status and schedules of public transportation.

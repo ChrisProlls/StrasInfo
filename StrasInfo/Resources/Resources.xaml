@@ -1,0 +1,787 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="using:StrasInfo.Converter">
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">
+            <x:String x:Key="ProgressBarIndeterminateForegroundThemeBrush">White</x:String>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+    <SolidColorBrush x:Key="ApplicationMainColor"
+                     Color="#97bf0b" />
+    <SolidColorBrush x:Key="ApplicationMainColorDark"
+                     Color="#536806" />
+    <SolidColorBrush x:Key="ApplicationMenuHeaderColor"
+                     Color="#55000000" />
+    <SolidColorBrush x:Key="ApplicationMenuRowColor"
+                     Color="#FF717171" />
+    <SolidColorBrush x:Key="ApplicationHomeTextColor"
+                     Color="Black" />
+    <SolidColorBrush x:Key="ApplicationMainColorLight"
+                     Color="#dbf778"/>
+    
+    <converter:BooleanToVisibilityConverter x:Key="TrueToVisibleConverter" />
+    <converter:BooleanToVisibilityConverter x:Key="FalseToVisibleConverter"
+                                            IsReversed="True" />
+    <converter:StringDistanceToVisibility x:Key="StringDistanceToVisibility" />
+    <converter:BooleanToTransparentConverter x:Key="BooleanToTransparentConverter" />
+    <converter:StringToBrushConverter x:Key="StringToBrushConverter" />
+    <converter:StringColorToBlackOrWhiteBrush x:Key="StringColorToBlackOrWhiteBrush" />
+    <FontFamily x:Key="StrasInfoFont">/Fonts/missionscript/Mission-Script.otf#Mission Script</FontFamily>
+    <FontFamily x:Key="AboutTitleFont">/Fonts/headline/HEADOH.TTF#Headline One HPLHS</FontFamily>
+    <DataTemplate x:Key="HomeTrafficTemplate">
+        <Grid>
+            <StackPanel Orientation="Vertical"
+                        Margin="8,0,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding dt}"
+                               Foreground="Black"
+                               FontSize="20"
+                               FontFamily="Segoe UI"
+                               FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding Distance}"
+                               Visibility="{Binding Distance, Converter={StaticResource StringDistanceToVisibility}}"
+                               Margin="10,0,0,0"
+                               FontSize="20"
+                               Foreground="DarkSlateGray"
+                               FontFamily="Segoe UI"
+                               FontWeight="Light" />
+                </StackPanel>
+                <TextBlock Text="{Binding dp}"
+                           FontSize="14"
+                           Foreground="Black"
+                           TextWrapping="Wrap" />
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Début : "
+                               FontSize="14"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               Grid.Row="0"
+                               Grid.Column="0" />
+                    <TextBlock Text="{Binding tb}"
+                               Margin="3,0,0,0"
+                               Foreground="Black"
+                               FontSize="14"
+                               Grid.Row="0"
+                               Grid.Column="1" />
+                    <TextBlock Text="Fin : "
+                               Foreground="Black"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               Grid.Row="1"
+                               Grid.Column="0" />
+                    <TextBlock Text="{Binding te}"
+                               Foreground="Black"
+                               Margin="3,0,0,0"
+                               FontSize="14"
+                               Grid.Row="1"
+                               Grid.Column="1" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="TransportLigneTemplate">
+        <Grid ScrollViewer.VerticalScrollMode="Disabled">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ContentControl ContentTemplate="{StaticResource EllipseLigne}" 
+                                />
+                <StackPanel Grid.Column="1"
+                            Margin="10 0 0 0"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="{Binding FullName}"
+                               FontSize="20"
+                               Foreground="Black" />
+                    <TextBlock Text="{Binding Name}"
+                               FontSize="15"
+                               Foreground="DimGray" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HoursTemplate">
+        <Grid ScrollViewer.VerticalScrollMode="Disabled">
+            <Grid.Resources>
+                <Style TargetType="TextBlock"
+                       x:Name="SubtitleStyle">
+                    <Setter Property="Foreground"
+                            Value="DimGray" />
+                    <Setter Property="FontSize"
+                            Value="15" />
+                    <Setter Property="Margin" Value="10 0 0 0"/>
+                </Style>
+            </Grid.Resources>
+            <StackPanel VerticalAlignment="Center"
+                        Margin="15 5 5 0">
+                <TextBlock Text="{Binding Name}"
+                           Foreground="Black"
+                           FontSize="19" />
+                <Border BorderBrush="{StaticResource ApplicationMainColor}"
+                        BorderThickness="2 0 0 0"
+                        Margin="10 0 0 0">
+                    <ListView 
+                        ItemsSource="{Binding Arrivees}"
+                        ItemContainerStyle="{StaticResource ListViewItemHomeSubStyle}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock"
+                                               x:Name="SubtitleStyle">
+                                            <Setter Property="Foreground"
+                                                    Value="DimGray" />
+                                            <Setter Property="FontSize"
+                                                    Value="15" />
+                                            <Setter Property="Margin" Value="10 0 0 0"/>
+                                            <Setter Property="VerticalAlignment" Value="Center"/>
+                                        </Style>
+                                    </Grid.Resources>
+
+                                    <Grid Width="35"
+                                          Height="35"
+                                          Margin="0 0 20 0">
+                                        <Ellipse Fill="{Binding Color, Converter={StaticResource StringToBrushConverter}}" />
+                                        <TextBlock Text="{Binding Number}"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
+                                                   FontSize="14"
+                                                    Foreground="{Binding Color, Converter={StaticResource StringColorToBlackOrWhiteBrush}}" />
+                                    </Grid>
+                                    <TextBlock Grid.Column="1" Text="{Binding Destination}" Style="{StaticResource SubtitleStyle}"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Horaire}" Style="{StaticResource SubtitleStyle}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EllipseLigne">
+        <Grid Width="75"
+                      Height="75"
+                      Margin="8">
+            <Ellipse Fill="{Binding Color, Converter={StaticResource StringToBrushConverter}}" />
+            <TextBlock Text="{Binding Number}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="23"
+                               Foreground="{Binding Color, Converter={StaticResource StringColorToBlackOrWhiteBrush}}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TransportArretTemplate">
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="TextBlock"
+                       x:Name="SubtitleStyle">
+                    <Setter Property="Foreground"
+                            Value="DimGray" />
+                    <Setter Property="FontSize"
+                            Value="15" />
+                    <Setter Property="Margin" Value="10 0 0 0"/>
+                </Style>
+            </Grid.Resources>
+            <StackPanel VerticalAlignment="Center"
+                        Margin="15 5 5 0">
+                <TextBlock Text="{Binding Name}"
+                           Foreground="Black"
+                           FontSize="19" />
+                <Border BorderBrush="{StaticResource ApplicationMainColor}"
+                        BorderThickness="2 0 0 0"
+                        Margin="10 0 0 0">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="De votre position : "
+                                       Style="{StaticResource SubtitleStyle}" />
+                            <TextBlock Text="{Binding Distance}"
+                                       Style="{StaticResource SubtitleStyle}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Prochain départ : "
+                                       Style="{StaticResource SubtitleStyle}" />
+                            <TextBlock Text="{Binding NextDeparture}"
+                                       Style="{StaticResource SubtitleStyle}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ParkingTemplate">
+        <Grid>
+            <StackPanel Grid.Row="0"
+                        Orientation="Vertical"
+                        Margin="4,0,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding nom}"
+                               Foreground="Black"
+                               FontSize="20"
+                               FontFamily="Segoe UI"
+                               FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding distance}"
+                               Visibility="{Binding distance, Converter={StaticResource StringDistanceToVisibility}}"
+                               Margin="10,0,0,0"
+                               FontSize="20"
+                               Foreground="DarkSlateGray"
+                               FontFamily="Segoe UI"
+                               FontWeight="Light" />
+                </StackPanel>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Status : "
+                               FontSize="14"
+                               Foreground="Black"
+                               FontWeight="Bold"
+                               Grid.Row="0"
+                               Grid.Column="0" />
+                    <TextBlock Text="{Binding status}"
+                               Margin="3,0,0,0"
+                               FontSize="14"
+                               Grid.Row="0"
+                               Grid.Column="1">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{Binding statusColor}" />
+                        </TextBlock.Foreground></TextBlock>
+                    <TextBlock Text="Place(s) : "
+                               Foreground="Black"
+                               FontSize="14"
+                               FontWeight="Bold"
+                               Grid.Row="1"
+                               Grid.Column="0" />
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="1"
+                                Grid.Column="1">
+                        <TextBlock Text="{Binding placesDisponibles}"
+                                   Foreground="Black"
+                                   Margin="3,0,0,0"
+                                   FontSize="14" />
+                        <TextBlock Text=" / "
+                                   Foreground="Black"
+                                   FontSize="14" />
+                        <TextBlock Text="{Binding placesTotal}"
+                                   Foreground="Black"
+                                   Margin="3,0,0,0"
+                                   FontSize="14" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <Style TargetType="ListViewItem" x:Key="ListViewItemHomeSubStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" Storyboard.TargetName="myback" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#97bf0b"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="SelectedUnfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="myback" Background="Transparent" Margin="5 0 0 0" Padding="5 0">
+                            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListViewItem" x:Key="ListViewItemHomeStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" Storyboard.TargetName="myback" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#edfabb"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="SelectedUnfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="myback" Background="Transparent" Margin="0 5 0 5" CornerRadius="7" Padding="7">
+                            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HomeIcon"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Collapsed" />
+                        <Path Data="F1M1337.43,1007.95L1337.43,1027.45 1350.23,1027.45 1350.23,1010.99 1362.27,1010.99 1362.27,1027.51 1374.51,1027.51 1374.51,1007.83 1356.25,991.558 1337.43,1007.95z M1374.48,995.962L1374.48,985.032 1368.65,985.032 1368.65,990.799 1356.17,979.755 1356.13,979.713 1329.47,1003.31 1333.08,1007.39 1356.13,986.992 1379.2,1007.41 1382.81,1003.34 1374.48,995.962z"
+                              Stretch="Uniform"
+                              Fill="#FFFFFFFF"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TrafficIcon"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Collapsed" />
+                        <Path Data="F1M-251.746,-6.60834C-251.746,-6.89484,-251.754,-7.17609,-251.767,-7.45856L-259.539,-7.45856 -259.539,-14.5544C-253.98,-14.5623 -249.476,-19.9593 -249.476,-26.6175 -249.476,-26.904 -249.486,-27.1853 -249.503,-27.4665L-259.539,-27.4665 -259.539,-32.8233 -289.775,-32.8233 -289.775,-27.5381 -299.814,-27.5381C-299.83,-27.2542 -299.841,-26.969 -299.841,-26.6787 -299.841,-19.9468 -295.335,-14.4886 -289.775,-14.4827L-289.775,-7.52905 -297.266,-7.52905C-297.278,-7.24512 -297.287,-6.95996 -297.287,-6.6709 -297.287,0.0608521 -293.925,5.5166 -289.775,5.52515L-289.775,13.3316 -297.266,13.3316C-297.278,13.6155 -297.287,13.9007 -297.287,14.1898 -297.287,20.9216 -293.925,26.3773 -289.775,26.3857L-289.775,31.1767 -259.539,31.1767 -259.539,26.3154C-255.234,26.305 -251.746,20.9091 -251.746,14.2523 -251.746,13.9658 -251.754,13.6833 -251.767,13.402L-259.539,13.402 -259.539,5.45477C-255.234,5.44434,-251.746,0.0484009,-251.746,-6.60834z M-274.657,27.54C-279.075,27.54 -282.657,23.9581 -282.657,19.54 -282.657,15.1221 -279.075,11.54 -274.657,11.54 -270.239,11.54 -266.657,15.1221 -266.657,19.54 -266.657,23.9581 -270.239,27.54 -274.657,27.54z M-274.657,7.10516C-279.075,7.10516 -282.657,3.52313 -282.657,-0.894836 -282.657,-5.31293 -279.075,-8.89484 -274.657,-8.89484 -270.239,-8.89484 -266.657,-5.31293 -266.657,-0.894836 -266.657,3.52313 -270.239,7.10516 -274.657,7.10516z M-274.657,-13.3284C-279.075,-13.3284 -282.657,-16.9111 -282.657,-21.3284 -282.657,-25.7465 -279.075,-29.3284 -274.657,-29.3284 -270.239,-29.3284 -266.657,-25.7465 -266.657,-21.3284 -266.657,-16.9111 -270.239,-13.3284 -274.657,-13.3284z"
+                              Stretch="Uniform"
+                              Fill="#FFFFFFFF"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TransportIcon"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Collapsed" />
+                        <Path Data="F1M736.715,574.894L736.715,582.136 736.715,605.143 736.715,612.429 739.279,612.429C739.279,612.429 739.109,617.561 743.286,617.561 747.464,617.561 747.293,612.429 747.293,612.429L753.779,612.429 754.186,612.429 760.672,612.429C760.672,612.429 760.501,617.561 764.678,617.561 768.854,617.561 768.686,612.429 768.686,612.429L771.25,612.429 771.25,605.143 771.25,582.136 771.25,574.894 736.715,574.894z M746.286,577.199L761.514,577.199C762.859,577.199,763.059,580.244,761.514,580.244L746.286,580.244C745.303,580.244,745.188,577.199,746.286,577.199z M743.16,606.479C741.087,606.479 739.406,604.798 739.406,602.725 739.406,600.653 741.087,598.972 743.16,598.972 745.234,598.972 746.913,600.653 746.913,602.725 746.913,604.798 745.234,606.479 743.16,606.479z M741.022,595.098L741.022,582.202 766.24,582.202 766.24,595.098 741.022,595.098z M765.027,606.481C762.956,606.481 761.275,604.8 761.275,602.729 761.275,600.656 762.956,598.976 765.027,598.976 767.1,598.976 768.781,600.656 768.781,602.729 768.781,604.8 767.1,606.481 765.027,606.481z"
+                              Stretch="Uniform"
+                              Fill="White"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CategorieIcon"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Collapsed" />
+                        <Path Data="M2.7850876,53.098866L2.5748234,53.437367 2.5702438,55.037769 2.7808685,55.384071 17.114756,55.412773 17.319851,55.06897 17.32375,53.467468 17.118956,53.126267z M54.53076,46.758621L41.316166,52.387459 41.256866,52.781948 41.867256,54.261234 42.187551,54.492931 55.403444,48.864201 55.464346,48.465603 54.852652,46.987721z M2.852766,17.850201L2.6437912,18.187302 2.6408615,19.791605 2.8485565,20.132607 17.182455,20.161306 17.388849,19.820105 17.391849,18.216002 17.187054,17.878801z M41.066467,14.260313L27.851875,19.894445 27.792574,20.290241 28.402566,21.762924 28.724561,21.99972 41.940756,16.365789 42.001354,15.971293 41.389662,14.494711z M2.8683968,10.794088L2.6561813,11.140589 2.6535625,12.738092 2.8625355,13.081893 17.198454,13.111893 17.404548,12.768092 17.405848,11.170489 17.202654,10.825488z M38.373112,7.7604113L25.158515,13.391924 25.099217,13.787719 25.709307,15.263001 26.029903,15.497398 39.244196,9.8697663 39.306694,9.4674206 38.695105,7.9961281z M2.9843025,2.6730135L16.386275,2.6990138C17.970934,2.7042633,19.256,3.0767041,19.256,3.5376349L19.143103,61.294182C19.143103,61.755184,17.855037,62.127583,16.270378,62.124985L2.8683968,62.096382C1.2838364,62.092484,0.0012817383,61.717484,0,61.256481L0.11163139,3.5011349C0.11327934,3.040324,1.3996849,2.6704534,2.9843025,2.6730135z M36.839792,9.2993778E-06C37.176359,0.00098133123,37.404163,0.078159345,37.469225,0.23828322L59.535582,53.482544C59.711977,53.905739,58.666796,54.755928,57.202917,55.378319L44.850908,60.646458C43.390932,61.267551,42.060253,61.427746,41.885454,61.004555L19.820399,7.7578507C19.644002,7.3332863,20.690485,6.4830862,22.149063,5.8633337L34.500472,0.59899662C35.415771,0.20845279,36.278843,-0.0016106403,36.839792,9.2993778E-06z"
+                              Stretch="Uniform"
+                              Fill="DarkGray"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AProposIcon"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Collapsed" />
+                        <Path Data="M0.64199789,2.7119836L16.346003,18.416986C16.864008,18.932003,17.702996,18.932003,18.218987,18.416986L33.862996,2.7709438C34.181996,2.9829804,34.394001,3.3439434,34.394001,3.7559317L34.394001,23.891979C34.394001,24.542982,33.866993,25.068985,33.215992,25.068985L1.1770015,25.068985C0.5270079,25.068985,0,24.542982,0,23.891979L0,3.7559317C0,3.2990214,0.26300039,2.908029,0.64199789,2.7119836z M2.4646274,0L32.104004,0C32.089001,0.28299737,31.973,0.56099439,31.753998,0.77599239L18.058825,14.39585C17.59982,14.843845,16.87381,14.845845,16.437804,14.39885L2.7756311,0.84399176C2.5486285,0.61199403,2.4486271,0.30599713,2.4646274,0z"
+                              Stretch="Uniform"
+                              Fill="White"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ArrowPopupTrafic"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid"
+                              Width="64"
+                              Height="64"
+                              Visibility="Visible">
+                            <Path Data="M50.5,4.7500001C25.232973,4.75 4.75,25.232973 4.7500001,50.5 4.75,75.767029 25.232973,96.25 50.5,96.25 75.767029,96.25 96.25,75.767029 96.25,50.5 96.25,25.232973 75.767029,4.75 50.5,4.7500001z M50.5,0C78.390381,0 101,22.609621 101,50.5 101,78.390381 78.390381,101 50.5,101 22.609621,101 0,78.390381 0,50.5 0,22.609621 22.609621,0 50.5,0z"
+                                  Stretch="Fill"
+                                  Fill="#00FFFFFF"
+                                  Name="Stroke"
+                                  Visibility="Visible" />
+                        </Grid>
+                        <Path Data="M454.165,177.507L422.165,212.46 390.165,177.507 454.165,177.507z"
+                              Stretch="Uniform"
+                              Fill="#FF97BF0B"
+                              Width="36"
+                              Height="36"
+                              Margin="0,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1"
+                                                        ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeartNonFavorite"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid" Width="48" Height="48" Visibility="Collapsed" />
+                        <Path Data="M1415.3,404.378C1418.67,407.572 1422.34,410.191 1425.43,412.338 1433.28,417.786 1438.86,421.664 1439.74,424.831 1440.49,421.729 1446.72,417.657 1453.99,412.216 1461.94,406.268 1474.26,397.8 1474.19,383.764 1474.05,358.139 1448.27,354.063 1439.74,375.199 1430.85,353.167 1405.5,358.274 1405.3,383.835 1405.24,392.515 1409.86,399.206 1415.3,404.378" Stretch="Uniform" Fill="LightGray" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeartFavorite"
+           TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid Name="backgroundGrid" Width="48" Height="48" Visibility="Collapsed" />
+                        <Path Data="M1415.3,404.378C1418.67,407.572 1422.34,410.191 1425.43,412.338 1433.28,417.786 1438.86,421.664 1439.74,424.831 1440.49,421.729 1446.72,417.657 1453.99,412.216 1461.94,406.268 1474.26,397.8 1474.19,383.764 1474.05,358.139 1448.27,354.063 1439.74,375.199 1430.85,353.167 1405.5,358.274 1405.3,383.835 1405.24,392.515 1409.86,399.206 1415.3,404.378" Stretch="Uniform" Fill="#FF3D7A1B" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Template pour les boutons du menu désactivé -->
+    <ControlTemplate TargetType="Button" x:Key="BouttonControlTemplate">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="PointerOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                               Storyboard.TargetName="Border">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{StaticResource ApplicationMainColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                               Storyboard.TargetName="ContentPresenter">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{ThemeResource ButtonPointerOverForegroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                               Storyboard.TargetName="Border">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{StaticResource ApplicationMainColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                               Storyboard.TargetName="ContentPresenter">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{ThemeResource ButtonPressedForegroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                               Storyboard.TargetName="Border">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{StaticResource ApplicationMenuHeaderColor}" />
+                            </ObjectAnimationUsingKeyFrames>-->
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
+                                                               Storyboard.TargetName="Border">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="{StaticResource ApplicationMenuHeaderColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                               Storyboard.TargetName="ContentPresenter">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                            Value="Black" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                                 To="1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 Storyboard.TargetName="FocusVisualWhite" />
+                            <DoubleAnimation Duration="0"
+                                                 To="1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 Storyboard.TargetName="FocusVisualBlack" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="PointerFocused" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        Margin="6 0 0 0">
+                <ContentPresenter x:Name="ContentPresenter"
+                                      AutomationProperties.AccessibilityView="Raw"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      ContentTransitions="{TemplateBinding ContentTransitions}"
+                                      Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      Margin="{TemplateBinding Padding}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+            <Rectangle x:Name="FocusVisualWhite"
+                           IsHitTestVisible="False"
+                           Opacity="0"
+                           StrokeDashOffset="1.5"
+                           StrokeEndLineCap="Square"
+                           Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"
+                           StrokeDashArray="1,1" />
+            <Rectangle x:Name="FocusVisualBlack"
+                           IsHitTestVisible="False"
+                           Opacity="0"
+                           StrokeDashOffset="0.5"
+                           StrokeEndLineCap="Square"
+                           Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}"
+                           StrokeDashArray="1,1" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate TargetType="Button" x:Key="BouttonFavoriteControlTemplate">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="PointerOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+                                                                   Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPointerOverForegroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                   Storyboard.TargetProperty="Background">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ApplicationMainColorLight}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+                                                                   Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedForegroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                   Storyboard.TargetProperty="Background">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBackgroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+                                                                   Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledForegroundThemeBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="FocusVisualWhite"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1"
+                                                     Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="FocusVisualBlack"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1"
+                                                     Duration="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="PointerFocused" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                    CornerRadius="8"
+                            Margin="3">
+                <ContentPresenter x:Name="ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTransitions="{TemplateBinding ContentTransitions}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                          AutomationProperties.AccessibilityView="Raw"/>
+            </Border>
+            <Rectangle x:Name="FocusVisualWhite"
+                               IsHitTestVisible="False"
+                               Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"
+                               StrokeEndLineCap="Square"
+                               StrokeDashArray="1,1"
+                               Opacity="0"
+                               StrokeDashOffset="1.5" />
+            <Rectangle x:Name="FocusVisualBlack"
+                               IsHitTestVisible="False"
+                               Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}"
+                               StrokeEndLineCap="Square"
+                               StrokeDashArray="1,1"
+                               Opacity="0"
+                               StrokeDashOffset="0.5" />
+        </Grid>
+    </ControlTemplate>
+
+
+    
+</ResourceDictionary>

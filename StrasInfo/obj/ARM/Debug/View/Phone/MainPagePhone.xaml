@@ -1,0 +1,122 @@
+﻿<UserControl
+    x:Class="StrasInfo.View.Phone.MainPagePhone"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="using:StrasInfo.View.Phone"
+    xmlns:dataTemplateSelector="using:StrasInfo.DataTemplateSelector"
+    DataContext="{Binding MainModel, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HomeViewTemplate">
+            <view:HomeView />
+        </DataTemplate>
+        <DataTemplate x:Key="TraficViewTemplate">
+            <view:TraficView />
+        </DataTemplate>
+        <DataTemplate x:Key="TransportViewTemplate">
+            <view:TransportView />
+        </DataTemplate>
+        <dataTemplateSelector:MainTemplateSelector x:Key="MainTemplateSelector"
+                                                   HomeTemplate="{StaticResource HomeViewTemplate}"
+                                                   TraficTemplate="{StaticResource TraficViewTemplate}"
+                                                   TransportTemplate="{StaticResource TransportViewTemplate}"/>
+        <Storyboard x:ConnectionId='1' x:Name="RightContentStoryboard">
+            <DoubleAnimation Duration="0:0:0.4"
+                             To="-300"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                             Storyboard.TargetName="rightContent">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:ConnectionId='2' x:Name="RightContentStoryboardClosed">
+            <DoubleAnimation Duration="0:0:0.4"
+                             To="0"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                             Storyboard.TargetName="rightContent">
+                <DoubleAnimation.EasingFunction>
+                    <QuarticEase EasingMode="EaseOut" />
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        
+        <Storyboard x:ConnectionId='3' x:Name="ToGrayBackground">
+            <DoubleAnimation Duration="0:0:0.4"
+                             To="0.5"
+                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                             Storyboard.TargetName="gridGrayBackground"/>
+        </Storyboard>
+        <Storyboard x:ConnectionId='4' x:Name="ToTransparentBackground">
+            <DoubleAnimation Duration="0:0:0.4"
+                             To="0"
+                             Storyboard.TargetProperty="(UIElement.Opacity)"
+                             Storyboard.TargetName="gridGrayBackground"/>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Background="GhostWhite"
+              RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform />
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <Grid x:ConnectionId='7' x:Name="HeaderGrid"
+                  Grid.Row="0"
+                  Background="{StaticResource ApplicationMainColor}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Height="1"
+                           Grid.ColumnSpan="3"
+                           VerticalAlignment="Bottom"
+                           Fill="DimGray" />
+
+                <Button Content="Test"
+                        Grid.Column="0"
+                        Opacity="0" />
+                <TextBlock Text="Stras' Info"
+                           Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="40"
+                           FontFamily="{StaticResource StrasInfoFont}" />
+                <Button Grid.Column="2"
+                        Margin="0 0 0 1"
+                        Background="{StaticResource ApplicationMainColor}"
+                        BorderThickness="0"
+                        Command="{Binding ChangeSlideViewPositionCommand}">
+                    <Image Source="/Assets/menu.png" />
+                </Button>
+            </Grid>
+
+            <ContentControl Grid.Row="1"
+                            Content="{Binding CurrentView}"
+                            ContentTemplateSelector="{StaticResource MainTemplateSelector}" />
+        </Grid>
+        <Grid x:ConnectionId='5' x:Name="gridGrayBackground" 
+              Background="Black" 
+              Opacity="0"
+              Visibility="Collapsed"></Grid>
+        <view:RightContent x:ConnectionId='6' x:Name="rightContent"
+                           HorizontalAlignment="Right"
+                           RenderTransformOrigin="0.5,0.5"
+                           Margin="0,0,-300,0">
+            <view:RightContent.RenderTransform>
+                <CompositeTransform />
+            </view:RightContent.RenderTransform>
+        </view:RightContent>
+        
+    </Grid>
+</UserControl>
+

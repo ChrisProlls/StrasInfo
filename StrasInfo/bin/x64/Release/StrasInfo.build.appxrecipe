@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>CHRISTOPHE-PC</Machine>
+    <WindowsUser>Christophe</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>b03d6c2d-d7d3-4c2e-817d-f80379425b9e</PackageIdentityName>
+    <IntermediateOutputPath>D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\chantier.png">
+      <PackagePath>Assets\chantier.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\GPSposition.png">
+      <PackagePath>Assets\GPSposition.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\menu.png">
+      <PackagePath>Assets\menu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square310x310Logo.scale-100.png">
+      <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square310x310Logo.scale-200.png">
+      <PackagePath>Assets\Square310x310Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square310x310Logo.scale-400.png">
+      <PackagePath>Assets\Square310x310Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square71x71Logo.scale-100.png">
+      <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square71x71Logo.scale-125.png">
+      <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square71x71Logo.scale-150.png">
+      <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square71x71Logo.scale-200.png">
+      <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Square71x71Logo.scale-400.png">
+      <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\twitter.png">
+      <PackagePath>Assets\twitter.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\ClrCompression.dll">
+      <PackagePath>ClrCompression.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\cityscape\CITY.TTF">
+      <PackagePath>Fonts\cityscape\CITY.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\cityscape\CITY2.TTF">
+      <PackagePath>Fonts\cityscape\CITY2.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\cityscape\CITY3.TTF">
+      <PackagePath>Fonts\cityscape\CITY3.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\cityscape\CITY4.TTF">
+      <PackagePath>Fonts\cityscape\CITY4.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\cityscape\CITY5.TTF">
+      <PackagePath>Fonts\cityscape\CITY5.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\headline\HEADOH.TTF">
+      <PackagePath>Fonts\headline\HEADOH.TTF</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Fonts\missionscript\Mission-Script.otf">
+      <PackagePath>Fonts\missionscript\Mission-Script.otf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\agency.txt">
+      <PackagePath>Models\Transport\gtfs\agency.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\calendar.txt">
+      <PackagePath>Models\Transport\gtfs\calendar.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\calendar_dates.txt">
+      <PackagePath>Models\Transport\gtfs\calendar_dates.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\code.txt">
+      <PackagePath>Models\Transport\gtfs\code.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\routes.txt">
+      <PackagePath>Models\Transport\gtfs\routes.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\stops.txt">
+      <PackagePath>Models\Transport\gtfs\stops.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\stop_times.txt">
+      <PackagePath>Models\Transport\gtfs\stop_times.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\transfers.txt">
+      <PackagePath>Models\Transport\gtfs\transfers.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\Models\Transport\gtfs\trips.txt">
+      <PackagePath>Models\Transport\gtfs\trips.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\StrasInfo.dll">
+      <PackagePath>StrasInfo.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\StrasInfo.exe">
+      <PackagePath>StrasInfo.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\_Resources\0.rsrc">
+      <PackagePath>_Resources\0.rsrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\_Resources\1.rsrc">
+      <PackagePath>_Resources\1.rsrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Release\ilc\_Resources\index.txt">
+      <PackagePath>_Resources\index.txt</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23231.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\ARM\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23231.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x64\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\">
+      <Name>Microsoft.NET.Native.Runtime.1.1</Name>
+      <Version>1.1.23231.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.1, MinVersion = 1.1.23231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Runtime.1.1\1.1\.\AppX\x86\Microsoft.NET.Native.Runtime.1.1.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.22929.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.22929.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

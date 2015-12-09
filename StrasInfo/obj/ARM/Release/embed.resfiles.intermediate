@@ -1,0 +1,12 @@
+App.xbf
+MainPage.xbf
+Popup\PopupInfoStatus.xbf
+Resources\Resources.xbf
+View\Phone\CustomSplashScreen.xbf
+View\Phone\HomeView.xbf
+View\Phone\MainPagePhone.xbf
+View\Phone\RightContent.xbf
+View\Phone\TraficView.xbf
+View\Phone\TransportView.xbf
+View\Tablet\About.xbf
+View\Tablet\MainPageTablet.xbf

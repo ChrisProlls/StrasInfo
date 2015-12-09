@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="StrasInfo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StrasInfo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:phoneView="using:StrasInfo.View.Phone"
+    xmlns:tabletView="using:StrasInfo.View.Tablet"
+    xmlns:triggers="using:StrasInfo.Triggers"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:ConnectionId='1' x:Name="HideSplashScreen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="customSplashScreen">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame x:ConnectionId='2' KeyTime="0:0:1.5" Value="-402.985" x:Name="HideSplashScreenFrame">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='3' x:Name="MainGrid">
+        <tabletView:MainPageTablet x:ConnectionId='4' 
+            x:Name="TabletPage"
+            x:DeferLoadStrategy="Lazy" 
+            Visibility="Collapsed"/>
+        
+        <phoneView:MainPagePhone x:ConnectionId='5' 
+            x:Name="PhonePage"
+            x:DeferLoadStrategy="Lazy" 
+            Visibility="Collapsed"/>
+
+        <phoneView:CustomSplashScreen x:ConnectionId='6' x:Name="customSplashScreen" RenderTransformOrigin="0.5,0.5" >
+            <phoneView:CustomSplashScreen.RenderTransform>
+                <CompositeTransform/>
+            </phoneView:CustomSplashScreen.RenderTransform>
+        </phoneView:CustomSplashScreen>
+
+        <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:ConnectionId='7' x:Name="windows">
+                <VisualState.StateTriggers>
+                        <triggers:DeviceFamilyStateTrigger DeviceFamily="Desktop" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                        <Setter Target="TabletPage.Visibility" Value="Visible" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:ConnectionId='8' x:Name="phone">
+                <VisualState.StateTriggers>
+                        <triggers:DeviceFamilyStateTrigger DeviceFamily="Mobile" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                        <Setter Target="PhonePage.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+    </Grid>
+    
+</Page>
+

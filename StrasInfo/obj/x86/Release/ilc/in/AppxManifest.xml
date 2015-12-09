@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp build" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build">
+  <!--
+    LE FICHIER MANIFESTE DE CE PACKAGE A ÉTÉ GÉNÉRÉ PAR LE PROCESSUS DE GÉNÉRATION.
+
+    Les modifications apportées à ce fichier seront perdues lors de la régénération. Pour corriger les erreurs présentes dans ce fichier, modifiez le fichier source .appxmanifest.
+
+    Pour plus d'informations sur les fichiers manifeste, consultez http://go.microsoft.com/fwlink/?LinkID=241727
+  -->
+  <Identity Name="50567ChristopheGIGAX.StrasInfo" Publisher="CN=52D52670-74D2-4CBA-A7E9-F8FEFA8D7E46" Version="2.0.1.0" ProcessorArchitecture="x86" />
+  <mp:PhoneIdentity PhoneProductId="b03d6c2d-d7d3-4c2e-817d-f80379425b9e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>StrasInfo</DisplayName>
+    <PublisherDisplayName>Christophe GIGAX</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10240.0" MaxVersionTested="10.0.10240.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="FR" />
+    <Resource Language="EN-US" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="StrasInfo.exe" EntryPoint="StrasInfo.App">
+      <uap:VisualElements DisplayName="StrasInfo" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="StrasInfo" BackgroundColor="#FFFFFF">
+        <uap:DefaultTile Square310x310Logo="Assets\Square310x310Logo.png" Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png" ShortName="StrasInfo">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="assets/SplashScreen.png" BackgroundColor="#97bf0b" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+  <build:Metadata>
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
+    <build:Item Name="VisualStudio" Version="14.0" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
+    <build:Item Name="OperatingSystem" Version="10.0.10586.0 (th2_release.151029-1700)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.24720.0" />
+    <build:Item Name="ProjectGUID" Value="{8477EA28-13E1-4C7E-9DC1-8EB2EA4837E0}" />
+    <build:Item Name="ilc.exe" Version="1.2.23413.00 built by: PROJECTNREL" />
+    <build:Item Name="OptimizingToolset" Value="ilc.exe" />
+    <build:Item Name="UseDotNetNativeSharedAssemblyFrameworkPackage" Value="true" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="14.0.24720.0" />
+    <build:Item Name="WindowsMobile" Version="10.0.10240.0" />
+    <build:Item Name="MakePri.exe" Version="10.0.10586.15 (th2_release.151119-1817)" />
+  </build:Metadata>
+</Package>

@@ -1,0 +1,9 @@
+/out:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\intermediate\SgGenerated\\"
+/int:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\intermediate\\"
+/ref:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\intermediate\PreMergeILTransformed\\"
+/ref:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\in\\"
+/ref:"C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x64\ilc\lib\Private\\"
+/ref:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\in\\"
+/ref:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\in\WinMetadata\\"
+/ca:System.Private.CoreLib
+"@D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\x64\Release\ilc\intermediate\PreMergeILTransformed\ComputedSerializationInput.txt"

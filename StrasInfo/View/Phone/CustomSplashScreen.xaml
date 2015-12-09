@@ -1,0 +1,64 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    x:Class="StrasInfo.View.Phone.CustomSplashScreen"
+    >
+    <UserControl.Resources>
+        <Storyboard x:Name="ChangeColor">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="grid">
+				<EasingColorKeyFrame KeyTime="0:0:2" Value="#FF97BF0B"/>
+				<EasingColorKeyFrame KeyTime="0:0:3" Value="White"/>
+			</ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                          Storyboard.TargetName="textBlock">
+                <EasingColorKeyFrame KeyTime="0:0:2"
+                                     Value="White" />
+                <EasingColorKeyFrame KeyTime="0:0:3"
+                                     Value="#FF97BF0B" />
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+		<Storyboard x:Name="MoveText">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="-112">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CircleEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+	</UserControl.Resources>
+	<Grid x:Name="grid" Background="{StaticResource ApplicationMainColor}">
+		<TextBlock Text="Lancement de l'application ..."
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			FontSize="25" 
+			FontFamily="Segoe UI"
+			FontWeight="Light"
+			Foreground="{StaticResource ApplicationMainColor}"/>
+        <ProgressBar Foreground="White"
+                     Background="{StaticResource ApplicationMainColor}"
+                     IsIndeterminate="True"
+                     Margin="0 100 0 0"/>
+        <StackPanel Orientation="Horizontal"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			x:Name="StackPanelStrasInfo">
+			<TextBlock x:Name="textBlock" Text="Stras' Info"
+				FontFamily="{StaticResource StrasInfoFont}"
+				FontStyle="Normal"
+				FontWeight="Normal"
+				FontStretch="Normal"
+				FontSize="80"
+				Foreground="White" RenderTransformOrigin="0.5,0.5" >
+				<TextBlock.RenderTransform>
+					<CompositeTransform/>
+				</TextBlock.RenderTransform>
+			</TextBlock>
+		</StackPanel>
+	</Grid>
+</UserControl>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="50567ChristopheGIGAX.StrasInfo" version="1.0" primary="true">
+		<Qualifiers>
+			<AlternateForm>UNPLATED</AlternateForm>
+			<Scale>200</Scale>
+			<TargetSize>256,24</TargetSize>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/App.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MainPage.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/MainPage.xbf">
+				<Candidate type="EmbeddedData">
+					<Base64Value>[Embedded Binary Data]</Base64Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="StrasInfo.xr.xml" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/StrasInfo.xr.xml">
+				<Candidate type="Path">
+					<Value>StrasInfo.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="chantier.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/chantier.png">
+					<Candidate type="Path">
+						<Value>Assets\chantier.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="GPSposition.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/GPSposition.png">
+					<Candidate type="Path">
+						<Value>Assets\GPSposition.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="LockScreenLogo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/LockScreenLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\LockScreenLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="menu.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/menu.png">
+					<Candidate type="Path">
+						<Value>Assets\menu.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square150x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square310x310Logo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/Square310x310Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square310x310Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/Square44x44Logo.png">
+					<Candidate qualifiers="TargetSize-256" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-256.png</Value>
+					</Candidate>
+					<Candidate qualifiers="TargetSize-24, AlternateForm-UNPLATED" type="Path">
+						<Value>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square44x44Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square71x71Logo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/Square71x71Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Square71x71Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/StoreLogo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\StoreLogo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="twitter.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/twitter.png">
+					<Candidate type="Path">
+						<Value>Assets\twitter.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Assets/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-200" isDefault="true" type="Path">
+						<Value>Assets\Wide310x150Logo.scale-200.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Fonts">
+				<ResourceMapSubtree name="cityscape">
+					<NamedResource name="CITY.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/cityscape/CITY.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\cityscape\CITY.TTF</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CITY2.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/cityscape/CITY2.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\cityscape\CITY2.TTF</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CITY3.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/cityscape/CITY3.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\cityscape\CITY3.TTF</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CITY4.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/cityscape/CITY4.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\cityscape\CITY4.TTF</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="CITY5.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/cityscape/CITY5.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\cityscape\CITY5.TTF</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="headline">
+					<NamedResource name="HEADOH.TTF" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/headline/HEADOH.TTF">
+						<Candidate type="Path">
+							<Value>Fonts\headline\HEADOH.TTF</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="missionscript">
+					<NamedResource name="Mission-Script.otf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Fonts/missionscript/Mission-Script.otf">
+						<Candidate type="Path">
+							<Value>Fonts\missionscript\Mission-Script.otf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Models">
+				<ResourceMapSubtree name="Transport">
+					<ResourceMapSubtree name="gtfs">
+						<NamedResource name="agency.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/agency.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\agency.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="calendar.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/calendar.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\calendar.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="calendar_dates.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/calendar_dates.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\calendar_dates.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="code.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/code.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\code.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="routes.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/routes.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\routes.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="stops.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/stops.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\stops.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="stop_times.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/stop_times.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\stop_times.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="transfers.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/transfers.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\transfers.txt</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="trips.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/trips.txt">
+							<Candidate type="Path">
+								<Value>Models\Transport\gtfs\trips.txt</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Popup">
+				<NamedResource name="PopupInfoStatus.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Popup/PopupInfoStatus.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Properties">
+				<NamedResource name="Default.rd.xml" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Properties/Default.rd.xml">
+					<Candidate type="Path">
+						<Value>Properties\Default.rd.xml</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="Resources">
+				<NamedResource name="Resources.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Resources/Resources.xbf">
+					<Candidate type="EmbeddedData">
+						<Base64Value>[Embedded Binary Data]</Base64Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="View">
+				<ResourceMapSubtree name="Phone">
+					<NamedResource name="CustomSplashScreen.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/CustomSplashScreen.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="HomeView.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/HomeView.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="MainPagePhone.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/MainPagePhone.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="RightContent.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/RightContent.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="TraficView.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/TraficView.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="TransportView.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Phone/TransportView.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="Tablet">
+					<NamedResource name="About.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Tablet/About.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="MainPageTablet.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/View/Tablet/MainPageTablet.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="WinMetadata">
+				<NamedResource name="Windows.winmd" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/WinMetadata/Windows.winmd">
+					<Candidate type="Path">
+						<Value>WinMetadata\Windows.winmd</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+		<ResourceMapSubtree name="Microsoft.Practices.ServiceLocation.Properties.Resources">
+			<NamedResource name="ActivateAllExceptionMessage" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Microsoft.Practices.ServiceLocation.Properties.Resources/ActivateAllExceptionMessage"/>
+			<NamedResource name="ActivationExceptionMessage" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Microsoft.Practices.ServiceLocation.Properties.Resources/ActivationExceptionMessage"/>
+			<NamedResource name="ServiceLocationProviderNotSetMessage" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Microsoft.Practices.ServiceLocation.Properties.Resources/ServiceLocationProviderNotSetMessage"/>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

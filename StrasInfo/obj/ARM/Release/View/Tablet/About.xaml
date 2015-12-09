@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="StrasInfo.View.Tablet.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StrasInfo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="GhostWhite">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="z"
+                               Foreground="{StaticResource ApplicationMainColorDark}"
+                               FontFamily="/Fonts/cityscape/CITY5.TTF#Cityscape"
+                               FontSize="80"/>
+            <TextBlock x:ConnectionId='2' x:Name="PageTitle"
+                               Text="A propos"
+                               Style="{StaticResource HeaderTextBlockStyle}"
+                               Foreground="{StaticResource ApplicationMainColorDark}"
+                               FontFamily="{StaticResource StrasInfoFont}"
+                               FontSize="90"
+                               IsHitTestVisible="false"
+                               Margin="40 10 0 0"
+                               TextWrapping="NoWrap"
+                               VerticalAlignment="Center" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1"
+            Margin="20">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock 
+                FontFamily="{StaticResource AboutTitleFont}"
+                FontSize="30"
+                Foreground="{StaticResource ApplicationMainColorDark}">
+                        <TextBlock.Inlines>
+                            <Underline>
+                                <Run>
+                                    hi, my name is christophe gigax
+                                </Run>
+                            </Underline>
+                        </TextBlock.Inlines>
+                    </TextBlock>
+
+                    <TextBlock FontFamily="Segoe UI"
+                       TextWrapping="Wrap"
+                       TextAlignment="Justify"
+                       Margin="0 10 0 0">
+                Alsaciens dans l'âme et développeur Windows depuis plusieurs années, 
+                    je prends plaisir à développer des applications Windows 10 afin d'apporter du contenu de qualité à la plateforme, 
+                    et de faciliter la vie des gens aux quotidiens.
+                    </TextBlock>
+
+                    <TextBlock 
+                FontFamily="{StaticResource AboutTitleFont}"
+                FontSize="30"
+                    Margin="0 10 0 0"
+                Foreground="{StaticResource ApplicationMainColorDark}">
+                        <TextBlock.Inlines>
+                            <Underline>
+                                <Run>
+                                    pourquoi stras'info ?
+                                </Run>
+                            </Underline>
+                        </TextBlock.Inlines>
+                    </TextBlock>
+
+                    <TextBlock FontFamily="Segoe UI"
+                       TextWrapping="Wrap"
+                       TextAlignment="Justify"
+                       Margin="0 10 0 0">
+                Me rendant tous les jours à Strasbourg dans le cadre de mon travail, 
+                    j'ai découvert un certain nombre de services non disponible sur Windows Phone, ou mal exposé aux utilisateurs. 
+                    Cette application a pour but d'exposer des informations relatives à la ville de Strasbourg le plus simplement possible.
+                    J'essaie de constamment améliorer et corriger les bugs de l'application. Vos feedbacks sont les bienvenus.
+                    </TextBlock>
+
+                    <TextBlock 
+                FontFamily="{StaticResource AboutTitleFont}"
+                FontSize="30"
+                    Margin="0 10 0 0"
+                Foreground="{StaticResource ApplicationMainColorDark}">
+                        <TextBlock.Inlines>
+                            <Underline>
+                                <Run>
+                                    contact
+                                </Run>
+                            </Underline>
+                        </TextBlock.Inlines>
+                    </TextBlock>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Image Source="/Assets/twitter.png"/>
+                        <TextBlock FontFamily="Segoe UI"
+                       TextWrapping="Wrap"
+                       TextAlignment="Justify"
+                               Margin="10 0 0 0"
+                               VerticalAlignment="Center">
+                        <Hyperlink x:ConnectionId='1'                        >@ChristopheGigax</Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
+

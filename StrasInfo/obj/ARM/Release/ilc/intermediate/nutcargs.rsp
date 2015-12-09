@@ -1,0 +1,9 @@
+/ignoreAccessChecks
+/metadataFile "D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\ILTransformed\StrasInfo.metadata"
+/gvmAssemblyName "System.Private.CoreLib"
+/o
+/sharedGenerics
+/ilmergeinfo "D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\ILTransformed\StrasInfo.csv"
+/sharedGenericsMode StandardHeuristics
+/in "D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\ILTransformed\StrasInfo.ilexe"
+/out "D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\MDIL\StrasInfo.mdilexe"

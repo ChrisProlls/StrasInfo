@@ -1,0 +1,7 @@
+MainPackage=D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\ARM\Release\Upload\StrasInfo_2.0.1.0_ARM.appx
+SymbolPackage=D:\Projets\StrasInfo\StrasInfo\StrasInfo\AppPackages\StrasInfo_2.0.1.0\StrasInfo_2.0.1.0_ARM.appxsym
+ResourcePack=D:\Projets\StrasInfo\StrasInfo\StrasInfo\_language-en.appx
+ResourcePack=D:\Projets\StrasInfo\StrasInfo\StrasInfo\_scale-100.appx
+ResourcePack=D:\Projets\StrasInfo\StrasInfo\StrasInfo\_scale-125.appx
+ResourcePack=D:\Projets\StrasInfo\StrasInfo\StrasInfo\_scale-150.appx
+ResourcePack=D:\Projets\StrasInfo\StrasInfo\StrasInfo\_scale-400.appx

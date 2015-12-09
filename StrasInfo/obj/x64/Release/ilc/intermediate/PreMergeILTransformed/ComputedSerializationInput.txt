@@ -1,0 +1,4 @@
+"/t:StrasInfo.StrasServiceSoap.ServiceSoap,StrasInfo,xml"
+"/t:System.ServiceModel.ExceptionDetail,System.ServiceModel.Primitives,dcs"
+"/t:System.Collections.Generic.Dictionary`2[[System.String,System.Runtime],[System.Object,System.Runtime]],mscorlib,dcs"
+"/t:System.Object,System.Runtime,dcs"

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="StrasInfo.View.Phone.TraficView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+             xmlns:popup="using:StrasInfo.Popup"
+             DataContext="{Binding TraficModel, Source={StaticResource Locator}}">
+    <Grid x:Name="MapGrid">
+        <maps:MapControl x:Name="StrasMapControl"
+                         MapServiceToken="1uXQY1wo39PWxZO66Xww~Gcr2KW6qG4caAtJMr4tH3A~Aq9FrcCWUZOkdaixiXx8S0q5e2epchPRvwTDTXcj0_YnaDZK4iFgpe0sKp3lhnCP"
+                         TrafficFlowVisible="True"
+                         MapTapped="MapControl_OnMapTapped">
+            <maps:MapItemsControl ItemsSource="{Binding TraficStatus}">
+                <maps:MapItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image  Source="../../Assets/chantier.png"
+                                Tapped="UIElement_OnTapped"
+                                Margin="0,15,0,15"
+                                maps:MapControl.NormalizedAnchorPoint="0.5,0.5"
+                                maps:MapControl.Location="{Binding Geopoint}" />
+                    </DataTemplate>
+                </maps:MapItemsControl.ItemTemplate>
+            </maps:MapItemsControl>
+        </maps:MapControl>
+    </Grid>
+</UserControl>

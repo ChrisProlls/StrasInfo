@@ -1,0 +1,140 @@
+﻿<UserControl x:Class="StrasInfo.View.Phone.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="using:StrasInfo.Converter"
+             DataContext="{Binding HomeModel, Source={StaticResource Locator}}">
+    <Grid Background="GhostWhite">
+        <Grid.Resources>
+
+        </Grid.Resources>
+        <Hub Background="GhostWhite">
+
+            <Hub.Header>
+                <TextBlock TextLineBounds="TrimToBaseline"
+                           OpticalMarginAlignment="TrimSideBearings"
+                           Text="Accueil"
+                           FontSize="40"
+                           Foreground="{StaticResource ApplicationHomeTextColor}" />
+            </Hub.Header>
+            <HubSection>
+                <HubSection.Header>
+                    <TextBlock TextLineBounds="TrimToBaseline"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               Text="Horaires CTS"
+                               Foreground="{StaticResource ApplicationHomeTextColor}" />
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="Aucun favoris"
+                                   Foreground="#CC000000"
+                                   FontSize="16"
+                                   Visibility="{Binding IsFavoriteHours, Converter={StaticResource FalseToVisibleConverter}}" />
+                        <ListView ItemsSource="{Binding FavoriteHours}"
+                                  ItemTemplate="{StaticResource HoursTemplate}"
+                                  ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                                  IsItemClickEnabled="True"
+                                  ItemClick="ListView_ItemClick"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                  Visibility="{Binding IsFavoriteHours, Converter={StaticResource TrueToVisibleConverter}}">
+
+                        </ListView>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection>
+                <HubSection.Header>
+                    <TextBlock TextLineBounds="TrimToBaseline"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               Text="Parking"
+                               Foreground="{StaticResource ApplicationHomeTextColor}" />
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Visibility="{Binding ParkingsLoaded, Converter={StaticResource FalseToVisibleConverter}}">
+                            <ProgressRing IsActive="True"
+                                          Foreground="LimeGreen"
+                                          Background="GhostWhite" />
+                            <TextBlock Text="Chargement ..."
+                                       HorizontalAlignment="Center"
+                                       Foreground="Black"
+                                       Margin="0 10 0 0" />
+                        </StackPanel>
+                        <ListView ItemsSource="{Binding ParkingInfos}"
+                                  ItemTemplate="{StaticResource ParkingTemplate}"
+                                  Visibility="{Binding ParkingsLoaded, Converter={StaticResource TrueToVisibleConverter}}"
+                                  IsItemClickEnabled="true"
+                                  ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                  ItemClick="ListViewBase_OnItemClick">
+                            <FlyoutBase.AttachedFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Itinéraire" 
+                                                    Command="{Binding ItineraireCommand}"
+                                                    CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=Tag}"/>
+                                </MenuFlyout>
+                            </FlyoutBase.AttachedFlyout>
+                        </ListView>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection>
+                <HubSection.Header>
+                    <TextBlock TextLineBounds="TrimToBaseline"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               Text="Informations sur le traffic"
+                               Foreground="{StaticResource ApplicationHomeTextColor}" />
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Visibility="{Binding TraficStatusLoaded, Converter={StaticResource FalseToVisibleConverter}}">
+                            <ProgressRing IsActive="True"
+                                          Foreground="LimeGreen"
+                                          Background="GhostWhite" />
+                            <TextBlock Text="Chargement ..."
+                                       HorizontalAlignment="Center"
+                                       Foreground="Black"
+                                       Margin="0 10 0 0" />
+                        </StackPanel>
+                        <ListView ItemsSource="{Binding TraficStatus}"
+                                  ItemTemplate="{StaticResource HomeTrafficTemplate}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                  Visibility="{Binding ParkingsLoaded, Converter={StaticResource TrueToVisibleConverter}}"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection>
+                <HubSection.Header>
+                    <TextBlock TextLineBounds="TrimToBaseline"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               Text="Alerte traffic"
+                               Foreground="{StaticResource ApplicationHomeTextColor}" />
+                </HubSection.Header>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Visibility="{Binding TraficAlertLoaded, Converter={StaticResource FalseToVisibleConverter}}">
+                            <ProgressRing IsActive="True" Foreground="LimeGreen" Background="GhostWhite"/>
+                            <TextBlock Text="Chargement ..." 
+                                       HorizontalAlignment="Center"
+                                       Foreground="Black" 
+                                       Margin="0 10 0 0" />
+                        </StackPanel>
+                        <TextBlock Text="Aucune alerte"
+                                   Foreground="#CC000000"
+                                   FontSize="16"
+                                   Visibility="{Binding IsAlertWhenLoadedComplete, Converter={StaticResource FalseToVisibleConverter}}" />
+                        <ListView ItemsSource="{Binding TraficAlerts}"
+                                  ItemTemplate="{StaticResource HomeTrafficTemplate}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ItemContainerStyle="{StaticResource ListViewItemHomeStyle}"
+                                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                  Visibility="{Binding IsAlert, Converter={StaticResource TrueToVisibleConverter}}" />
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+    </Grid>
+</UserControl>
