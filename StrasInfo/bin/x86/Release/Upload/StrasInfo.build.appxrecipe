@@ -510,33 +510,6 @@
     <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Fonts\missionscript\Mission-Script.otf">
       <PackagePath>Fonts\missionscript\Mission-Script.otf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\agency.txt">
-      <PackagePath>Models\Transport\gtfs\agency.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\calendar.txt">
-      <PackagePath>Models\Transport\gtfs\calendar.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\calendar_dates.txt">
-      <PackagePath>Models\Transport\gtfs\calendar_dates.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\code.txt">
-      <PackagePath>Models\Transport\gtfs\code.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\routes.txt">
-      <PackagePath>Models\Transport\gtfs\routes.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\stops.txt">
-      <PackagePath>Models\Transport\gtfs\stops.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\stop_times.txt">
-      <PackagePath>Models\Transport\gtfs\stop_times.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\transfers.txt">
-      <PackagePath>Models\Transport\gtfs\transfers.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Models\Transport\gtfs\trips.txt">
-      <PackagePath>Models\Transport\gtfs\trips.txt</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

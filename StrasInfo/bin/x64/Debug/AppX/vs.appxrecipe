@@ -22,13 +22,13 @@
     <AppXManifest Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-08T18:55:42.613</Modified>
+      <Modified>2015-12-16T20:28:27.698</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Debug\StrasInfo.exe">
       <PackagePath>entrypoint\StrasInfo.exe</PackagePath>
-      <Modified>2015-12-08T18:54:06.010</Modified>
+      <Modified>2015-12-16T20:28:26.590</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Christophe\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -686,11 +686,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-08T18:55:42.329</Modified>
+      <Modified>2015-12-16T20:28:27.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projets\StrasInfo\StrasInfo\StrasInfo\bin\x64\Debug\Core\StrasInfo.exe">
       <PackagePath>StrasInfo.exe</PackagePath>
-      <Modified>2015-12-08T18:55:42.611</Modified>
+      <Modified>2015-12-16T20:28:27.695</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

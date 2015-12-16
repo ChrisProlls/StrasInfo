@@ -43,13 +43,4 @@ Fonts\cityscape\CITY4.TTF
 Fonts\cityscape\CITY5.TTF
 Fonts\headline\HEADOH.TTF
 Fonts\missionscript\Mission-Script.otf
-Models\Transport\gtfs\agency.txt
-Models\Transport\gtfs\calendar.txt
-Models\Transport\gtfs\calendar_dates.txt
-Models\Transport\gtfs\code.txt
-Models\Transport\gtfs\routes.txt
-Models\Transport\gtfs\stop_times.txt
-Models\Transport\gtfs\stops.txt
-Models\Transport\gtfs\transfers.txt
-Models\Transport\gtfs\trips.txt
 Properties\Default.rd.xml

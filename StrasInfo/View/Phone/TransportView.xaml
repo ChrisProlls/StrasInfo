@@ -10,7 +10,7 @@
                                            Storyboard.TargetName="listView">
                 <EasingDoubleKeyFrame KeyTime="0"
                                       Value="0" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3"
                                       Value="-402"
                                       x:Name="HideListKeyFrame">
                     <EasingDoubleKeyFrame.EasingFunction>
@@ -25,7 +25,7 @@
                 <EasingDoubleKeyFrame KeyTime="0"
                                       Value="-402"
                                       x:Name="ShowListKeyFrame" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3"
                                       Value="0">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <ExponentialEase EasingMode="EaseOut" />
@@ -39,7 +39,7 @@
                                            Storyboard.TargetName="gridListArret">
                 <EasingDoubleKeyFrame KeyTime="0"
                                       Value="0" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3"
                                       Value="-402"
                                       x:Name="HideListKeyFrameListArret">
                     <EasingDoubleKeyFrame.EasingFunction>
@@ -54,7 +54,7 @@
                 <EasingDoubleKeyFrame KeyTime="0"
                                       Value="-402"
                                       x:Name="ShowListKeyFrameListArret" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.1"
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3"
                                       Value="0">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <ExponentialEase EasingMode="EaseOut" />
@@ -213,7 +213,8 @@
 
         <Grid 
             x:Name="gridListArret"
-            Visibility="{Binding ShowArretList, Converter={StaticResource TrueToVisibleConverter}}">
+            Visibility="{Binding ShowArretList, Converter={StaticResource TrueToVisibleConverter}}"
+            Background="GhostWhite">
             <Grid DataContext="{Binding SelectedLigne}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -239,7 +240,8 @@
                 BorderBrush="Black"
                 BorderThickness="0 0 1 0"
                 RenderTransformOrigin="0.5,0.5"
-                Visibility="{Binding ShowLigneList, Converter={StaticResource TrueToVisibleConverter}}">
+                Visibility="{Binding ShowLigneList, Converter={StaticResource TrueToVisibleConverter}}"
+                Background="GhostWhite">
             <ListView ItemsSource="{Binding Lignes}"
                       x:Name="LigneListView"
                       ItemTemplate="{StaticResource TransportLigneTemplate}"

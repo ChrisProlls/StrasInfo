@@ -163,30 +163,34 @@ namespace StrasInfo.ViewModels
             this.SelectArretCommand = new RelayCommand<Models.Transport.Arret>(
                 async arret =>
             {
-                arret.Arrivees.Clear();
+                try
+                {
+                    arret.Arrivees.Clear();
 
-                this.SelectedArret = arret;
-                this.ShowArretDetail = true;
+                    this.SelectedArret = arret;
+                    this.ShowArretDetail = true;
 
-                // If we go to the TransportView from the HomeView (favorite)
-                if (this.SelectedLigne == null || !this.SelectedLigne.Arrets.Any(item => item.Id == arret.Id))
-                    this.SelectedLigne = Ligne.GetAllLignes().First(ligne => ligne.Arrets.Any(item => item.Id == arret.Id));
+                    // If we go to the TransportView from the HomeView (favorite)
+                    if (this.SelectedLigne == null || !this.SelectedLigne.Arrets.Any(item => item.Id == arret.Id))
+                        this.SelectedLigne = Ligne.GetAllLignes().First(ligne => ligne.Arrets.Any(item => item.Id == arret.Id));
 
-                var arrivees = (await StrasService.GetArret(arret.Code)).OrderBy(arrivee => TimeSpan.Parse(arrivee.Horaire)).ToList();
+                    var arrivees = (await StrasService.GetArret(arret.Code)).OrderBy(arrivee => TimeSpan.Parse(arrivee.Horaire)).ToList();
 
-                if (arrivees.Count() == 0)
-                    return;
+                    if (arrivees.Count() == 0)
+                        return;
 
-                arrivees = arrivees
-                    .SkipWhile(arrive => arrive.EstApresMinuit)
-                    .Concat(arrivees.TakeWhile(arrive => arrive.EstApresMinuit)).ToList();
+                    arrivees = arrivees
+                        .SkipWhile(arrive => arrive.EstApresMinuit)
+                        .Concat(arrivees.TakeWhile(arrive => arrive.EstApresMinuit)).ToList();
 
-                this.SelectedArret.NextArrivee = arrivees.First().ToArriveeModel(this.Lignes);
+                    this.SelectedArret.NextArrivee = arrivees.First().ToArriveeModel(this.Lignes);
 
-                foreach (var item in arrivees.Skip(1))
-                    this.SelectedArret.Arrivees.Add(item.ToArriveeModel(this.Lignes));
+                    foreach (var item in arrivees.Skip(1))
+                        this.SelectedArret.Arrivees.Add(item.ToArriveeModel(this.Lignes));
 
-                this.IsFavorite = IsArretInFavorite(arret);
+                    this.IsFavorite = IsArretInFavorite(arret);
+                }
+                catch { }
             });
 
             this.ToogleFavorite = new RelayCommand(

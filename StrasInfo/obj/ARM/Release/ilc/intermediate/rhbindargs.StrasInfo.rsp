@@ -4,13 +4,12 @@
 /eh:clr
 /pdb
 "/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Native\vmath.lib"
+/customImports
 /methodBodyFolding
 "D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\MDIL\StrasInfo.mdilexe"
 "/i:D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\MDIL\"
 /out:"D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\Native\StrasInfo.exe"
 "/res:D:\Projets\StrasInfo\StrasInfo\StrasInfo\obj\ARM\Release\ilc\intermediate\Native.res"
-/standalone
+"/i:C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.Native.Framework.1.2\1.2\ARM\ret\MDIL"
 /shimexe
-"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Native\Interop.Native.lib"
-"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Native\corelib.native.lib"
-"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\ARM\ilc\lib\Native\TypeLoader.Native.lib"
+/classlib:SharedLibrary

@@ -5401,27 +5401,27 @@ namespace McgInterop
 	//     + Total Forward Stubs = 1749
 	//     + Total Reverse Stubs = 700 (50 shared stubs, 0 delegate to shared stubs. 700 normal stubs)
 	//     + Unshared Forward Stubs = 0
-	//     + Shared Forward Stubs = 3204
+	//     + Shared Forward Stubs = 3205
 	//     + Shared Target Forward Stubs = 1730
-	//     + Shared Target Forward Stubs Cache Hit = 1474
+	//     + Shared Target Forward Stubs Cache Hit = 1475
 	// 
 	// Type/Method Data
 		//
 	//     + WinRT interfaces : 546
 	//     + WinRT classes : 273
 	//     + WinRT delegates : 47
-	//     + WinRT class methods : 1156
-	//     + dispatch classes : 752
-	//     + dispatch methods : 1866
-	//     + stub classes : 1038
-	//     + stub methods : 3208
+	//     + WinRT class methods : 1157
+	//     + dispatch classes : 753
+	//     + dispatch methods : 1867
+	//     + stub classes : 1039
+	//     + stub methods : 3209
 	//     + vtables : 1393
-	//     + vtable methods : 3488
+	//     + vtable methods : 3489
 	// 
 	// Reducer Data
 		//
 	//     + discarded v-tables : 1005
-	//     + discarded v-table methods : 2894
+	//     + discarded v-table methods : 2895
 	//     + discarded class methods : 3
 	//     + discarded dispatch class methods : 259
 	//     + discarded stub class methods : 4
@@ -12654,11 +12654,11 @@ namespace McgInterop
 					CcwVtable = global::McgInterop.Intrinsics.AddrOf<global::System.Runtime.InteropServices.AddrOfGetCCWVtable>(global::McgInterop.CcwVtableData.Windows_Foundation__IReferenceArray_A_Windows_UI_Xaml_Markup_XmlnsDefinition_V_),
 					Flags = global::System.Runtime.InteropServices.McgInterfaceFlags.isIInspectable,
 				}, 
-				// index: 648, iid: f6f555ff-64ec-42a2-b93b-2fbc0c36a121 Windows.Phone.UI.Input.IBackPressedEventArgs, CCW discarded, RCW discarded
+				// index: 648, iid: f6f555ff-64ec-42a2-b93b-2fbc0c36a121 Windows.Phone.UI.Input.IBackPressedEventArgs, CCW discarded
 				new global::System.Runtime.InteropServices.McgInterfaceData() {
 					ItfGuid = new global::System.Guid(-151693825, 25836, 17058, 0xB9, 0x3B, 0x2F, 0xBC, 0xC, 0x36, 0xA1, 0x21), // {f6f555ff-64ec-42a2-b93b-2fbc0c36a121}
 					FixupItfType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Phone.UI.Input.IBackPressedEventArgs).TypeHandle), // hashcode: fd1afc18
-					FixupDispatchClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::System.Runtime.CompilerServices.DependencyReductionTypeRemoved).TypeHandle),
+					FixupDispatchClassType = new global::Internal.Runtime.CompilerServices.FixupRuntimeTypeHandle(typeof(global::Windows.Phone.UI.Input.BackPressedEventArgs).TypeHandle),
 					CcwVtable = global::McgInterop.Intrinsics.AddrOf<global::System.Runtime.InteropServices.AddrOfGetCCWVtable>(global::McgInterop.CcwVtableData.Windows_Phone_UI_Input__IBackPressedEventArgs),
 					Flags = global::System.Runtime.InteropServices.McgInterfaceFlags.isIInspectable,
 				}, 
@@ -32463,7 +32463,7 @@ namespace McgInterop
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(23292, typeof(global::Windows.Foundation.IReferenceArray<global::Windows.UI.Xaml.Markup.XmlnsDefinition>))]
 			[global::System.Runtime.CompilerServices.MethodAddrFixup(23324, typeof(global::McgInterop.CcwVtableData), "Windows_Foundation__IReferenceArray_A_Windows_UI_Xaml_Markup_XmlnsDefinition_V_")]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(23328, typeof(global::Windows.Phone.UI.Input.IBackPressedEventArgs))]
-			[global::System.Runtime.CompilerServices.TypeHandleFixup(23332, typeof(global::System.Runtime.CompilerServices.DependencyReductionTypeRemoved))]
+			[global::System.Runtime.CompilerServices.TypeHandleFixup(23332, typeof(global::Windows.Phone.UI.Input.BackPressedEventArgs))]
 			[global::System.Runtime.CompilerServices.MethodAddrFixup(23360, typeof(global::McgInterop.CcwVtableData), "Windows_Phone_UI_Input__IBackPressedEventArgs")]
 			[global::System.Runtime.CompilerServices.TypeHandleFixup(23364, typeof(global::Windows.UI.Popups.UICommandInvokedHandler))]
 			[global::System.Runtime.CompilerServices.MethodAddrFixup(23396, typeof(global::McgInterop.CcwVtableData), "Windows_UI_Popups__UICommandInvokedHandler")]

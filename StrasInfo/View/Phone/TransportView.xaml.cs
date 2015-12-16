@@ -37,7 +37,13 @@ namespace StrasInfo.View.Phone
                 }
             };
 
-            this.Unloaded += (sender, args) => SystemNavigationManager.GetForCurrentView().BackRequested -= TransportView_BackRequested;
+            this.Unloaded += (sender, args) =>
+            {
+                if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
+                    HardwareButtons.BackPressed -= HardwareButtonsOnBackPressed;
+
+                SystemNavigationManager.GetForCurrentView().BackRequested -= TransportView_BackRequested;
+            };
 
             this.LigneListView.Width = Window.Current.Bounds.Width;
             this.ArretListView.Width = Window.Current.Bounds.Width;
@@ -61,11 +67,15 @@ namespace StrasInfo.View.Phone
         private void TransportView_BackRequested(object sender, BackRequestedEventArgs e)
         {
             HandleBackRequest();
+
+            e.Handled = true;
         }
 
         private void HardwareButtonsOnBackPressed(object sender, BackPressedEventArgs backPressedEventArgs)
         {
             HandleBackRequest();
+
+            backPressedEventArgs.Handled = true;
         }
 
         private void HandleBackRequest()
@@ -88,7 +98,6 @@ namespace StrasInfo.View.Phone
 
                 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
             }
-
         }
 
         private void ListViewBase_OnItemClick(object sender, ItemClickEventArgs e)
@@ -122,11 +131,11 @@ namespace StrasInfo.View.Phone
                     return;
                 }
 
-                transportViewModel.SelectArretCommand.Execute(arret);
-
                 this.HideListViewArret.Completed += (o, o1) => transportViewModel.ShowArretList = false;
                 this.HideListViewArret.Begin();
 
+                transportViewModel.SelectArretCommand.Execute(arret);
+                
                 var position = new Windows.Devices.Geolocation.Geopoint(
                     new Windows.Devices.Geolocation.BasicGeoposition
                     {

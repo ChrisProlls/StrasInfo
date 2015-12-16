@@ -19,7 +19,7 @@ namespace StrasInfo.ViewModels
     using Windows.UI.Popups;
     using Windows.Storage;
     using Service;
-
+    using System.Globalization;
     /// <summary>
     /// The home view model.
     /// </summary>
@@ -100,7 +100,8 @@ namespace StrasInfo.ViewModels
         public bool IsFavoriteHours
         {
             get { return _isFavoriteHours; }
-            set {
+            set
+            {
                 _isFavoriteHours = value;
                 this.RaisePropertyChanged();
             }
@@ -218,28 +219,39 @@ namespace StrasInfo.ViewModels
             {
                 ApplicationDataCompositeValue item = keyValue.Value as ApplicationDataCompositeValue;
 
-                var arret = new Arret {
+                var arret = new Arret
+                {
                     Name = item["Name"] as string,
                     Code = item["Code"] as string,
                     Id = item["Id"] as string
                 };
 
-                var arrivees = (await StrasService.GetArret(arret.Code)).OrderBy(arrivee => TimeSpan.Parse(arrivee.Horaire)).ToList();
-
-                if (arrivees.Count() == 0)
-                    return;
-
-                arrivees = arrivees
-                    .SkipWhile(arrive => arrive.EstApresMinuit)
-                    .Concat(arrivees.TakeWhile(arrive => arrive.EstApresMinuit)).ToList();
-
-                foreach (var tmpArrivee in arrivees.Take(3))
-                    arret.Arrivees.Add(tmpArrivee.ToArriveeModel(allLines));
-
-                this.FavoriteHours.Add(arret);
+                try
+                {
+                    await AddFavoriteHours(arret, allLines);
+                }
+                catch { await AddFavoriteHours(arret, allLines); }
             }
 
             this.IsFavoriteHours = this.FavoriteHours.Count > 0;
+        }
+
+        private async Task AddFavoriteHours(Arret arret, List<Ligne> allLines)
+        {
+            var arrivees = (await StrasService.GetArret(arret.Code)).OrderBy(arrivee => TimeSpan.Parse(arrivee.Horaire)).ToList();
+
+
+            if (arrivees.Count() == 0)
+                return;
+
+            arrivees = arrivees
+                .SkipWhile(arrive => arrive.EstApresMinuit)
+                .Concat(arrivees.TakeWhile(arrive => arrive.EstApresMinuit)).ToList();
+
+            foreach (var tmpArrivee in arrivees.Take(3))
+                arret.Arrivees.Add(tmpArrivee.ToArriveeModel(allLines));
+
+            this.FavoriteHours.Add(arret);
         }
 
         private async Task ShowDialogBox(string text, string firstButtonText, UICommandInvokedHandler firstButtonAction, string secondButtonText, UICommandInvokedHandler secondButtonAction)
@@ -271,9 +283,7 @@ namespace StrasInfo.ViewModels
 
             foreach (var item in tmpParkingInfo)
                 item.distance =
-                    position.Coordinate.StringDistanceInKmFrom(
-                            Convert.ToDouble(item.go.y),
-                            Convert.ToDouble(item.go.x));
+                    position.Coordinate.StringDistanceInKmFrom(item.go.y, item.go.x);
 
             return new List<ParkingInfo>(tmpParkingInfo.OrderBy(s => s.distance));
         }
@@ -285,8 +295,8 @@ namespace StrasInfo.ViewModels
             foreach (var item in traficInfoAlert.s.Where(s => s.x != "0.00" && s.y != "0.00"))
                 item.Distance =
                     position.Coordinate.StringDistanceInKmFrom(
-                            double.Parse(item.y.Replace(',', '.')),
-                            double.Parse(item.x.Replace(',', '.')));
+                            double.Parse(item.y, CultureInfo.InvariantCulture),
+                            double.Parse(item.x, CultureInfo.InvariantCulture));
 
             return new List<TraficInfoAlert.S>(traficInfoAlert.s.OrderBy(s => s.Distance));
         }
@@ -308,7 +318,7 @@ namespace StrasInfo.ViewModels
         {
 
             // Assemble the Uri to launch.
-            Uri uri = new Uri("ms-drive-to:?destination.latitude=" + latitude.Replace(',','.') +
+            Uri uri = new Uri("ms-drive-to:?destination.latitude=" + latitude.Replace(',', '.') +
                 "&destination.longitude=" + longitude.Replace(',', '.'));
 
             // Launch the Uri.

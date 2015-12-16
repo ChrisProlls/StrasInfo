@@ -133,57 +133,6 @@
 					</NamedResource>
 				</ResourceMapSubtree>
 			</ResourceMapSubtree>
-			<ResourceMapSubtree name="Models">
-				<ResourceMapSubtree name="Transport">
-					<ResourceMapSubtree name="gtfs">
-						<NamedResource name="agency.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/agency.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\agency.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="calendar.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/calendar.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\calendar.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="calendar_dates.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/calendar_dates.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\calendar_dates.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="code.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/code.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\code.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="routes.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/routes.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\routes.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="stops.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/stops.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\stops.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="stop_times.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/stop_times.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\stop_times.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="transfers.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/transfers.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\transfers.txt</Value>
-							</Candidate>
-						</NamedResource>
-						<NamedResource name="trips.txt" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Models/Transport/gtfs/trips.txt">
-							<Candidate type="Path">
-								<Value>Models\Transport\gtfs\trips.txt</Value>
-							</Candidate>
-						</NamedResource>
-					</ResourceMapSubtree>
-				</ResourceMapSubtree>
-			</ResourceMapSubtree>
 			<ResourceMapSubtree name="Popup">
 				<NamedResource name="PopupInfoStatus.xbf" uri="ms-resource://50567ChristopheGIGAX.StrasInfo/Files/Popup/PopupInfoStatus.xbf">
 					<Candidate type="EmbeddedData">
